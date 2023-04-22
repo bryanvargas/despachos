@@ -18,6 +18,20 @@ sap.ui.define([
                 var oModel = new JSONModel(Device);
                 oModel.setDefaultBindingMode("OneWay");
                 return oModel;
+        },
+
+        createGlobalModel: function() {
+            var oModel = new JSONModel();
+            var oData = {};
+            oModel.setData(oData);
+            return oModel;
+        },
+
+        createTravelExpensesModel: function() {
+            var oModel = new JSONModel();
+            var oData = {};
+            oModel.setData(oData);
+            return oModel;
         }
     };
 });

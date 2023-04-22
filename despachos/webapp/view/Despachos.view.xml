@@ -1,0 +1,1403 @@
+<mvc:View controllerName="rizobacter.despachos.controller.Despachos"
+xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:tnt="sap.tnt"
+    xmlns:uxap="sap.uxap" displayBlock="true">
+    <Page id="page" showNavButton="true" showHeader="true">
+        <uxap:ObjectPageLayout id="ObjectPageLayout">
+            <!-- HEADER TITULO -->
+            <uxap:headerTitle>
+                <uxap:ObjectPageDynamicHeaderTitle>
+                    <uxap:expandedHeading>
+                        <Title text="Vuelo AR1202" />
+                    </uxap:expandedHeading>
+                    <uxap:snappedHeading>
+                        <HBox>
+                            <Avatar src="sap-icon://flight" class="sapUiMediumMarginEnd" displayShape="Cyrcle" />
+                            <VBox>
+                                <Title text="Vuelo AR1202" />
+                                <Label text="Reenvío de diaria planeajada" />
+                            </VBox>
+                        </HBox>
+                    </uxap:snappedHeading>
+                    <uxap:expandedContent>
+                        <Label text="Reenvío de diaria planeajada" />
+                    </uxap:expandedContent>
+                    <uxap:snappedTitleOnMobile>
+                        <Title text="Vuelo AR1202" />
+                    </uxap:snappedTitleOnMobile>
+                    <uxap:actions>
+                        <Button press="editarRequerimiento" icon="sap-icon://edit" text="Editar" type="Emphasized" visible="false"/>
+                        <Button type="Accept" press="abrirDialogFinalizacion" icon="sap-icon://save" text="Guardar" />
+                    </uxap:actions>
+                </uxap:ObjectPageDynamicHeaderTitle>
+            </uxap:headerTitle>
+            <!-- HEADER CONTENIDO -->
+            <uxap:headerContent>
+                <FlexBox class="fondo" wrap="Wrap" fitContainer="true">
+                    <Avatar src="sap-icon://flight" displayShape="Cyrcle" displaySize="L" />
+                    <VBox class="sapUiSmallMargin" alignItems="Center">
+                        <Title text="Estado" class="sapUiTinyMarginBottom" />
+                        <ObjectStatus text="En horario" state="Success" class="sapMObjectStatusLarge" />
+                    </VBox>
+                    <VBox class="sapUiSmallMargin" alignItems="Center">
+                        <Title text="Ruta" class="sapUiTinyMarginBottom" />
+                        <ObjectStatus text="GRU-MAD-AMS" state="Information" class="sapMObjectStatusLarge" />
+                    </VBox>
+                    <VBox class="sapUiSmallMargin" alignItems="Center">
+                        <Title text="Fecha" class="sapUiTinyMarginBottom" />
+                        <ObjectStatus text="22/06/2022" state="Information" icon="sap-icon://calendar" class="sapMObjectStatusLarge" />
+                    </VBox>
+                    <VBox class="sapUiSmallMargin" alignItems="Center">
+                        <Title text="Hora" class="sapUiTinyMarginBottom" />
+                        <ObjectStatus text="05:30" state="Information" icon="sap-icon://pending" class="sapMObjectStatusLarge" />
+                    </VBox>
+                    <VBox class="sapUiSmallMargin">
+                        <HBox>
+                            <Label text="Hotel:" class="sapUiSmallMarginEnd"/>
+                            <Text text="BANCO SAFRA GUARULHOS - Terminal 3"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="Usuario:" class="sapUiSmallMarginEnd"/>
+                            <Text text="GILENO"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="Fecha/hora envío:" class="sapUiSmallMarginEnd"/>
+                            <Text text="22/06/2022 - 03:06"/>
+                        </HBox>
+                    </VBox>
+                </FlexBox>
+            </uxap:headerContent>
+            <!-- SECCIONES -->
+            <uxap:sections>
+                <uxap:ObjectPageSection title="Tripulantes">
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection>
+                            <VBox>
+                                <MessageStrip text="Tripulantes participantes del Pairing" type="Information" showIcon="true" class="sapUiTinyMargin" />
+                                <Table class="sapUiSmallMarginBottom" alternateRowColors="true">
+                                    <headerToolbar>
+                                        <OverflowToolbar>
+                                            <ToolbarSpacer/>
+                                            <Button icon="sap-icon://add" text="Nuevo tripulante"/>
+                                        </OverflowToolbar>
+                                    </headerToolbar>
+                                    <columns>
+                                        <Column width="3rem">
+                                            <header>
+                                                <Label/>
+                                            </header>
+                                        </Column>
+                                        <Column width="10rem">
+                                            <header>
+                                                <Label text="Identificación"/>
+                                            </header>
+                                        </Column>
+                                        <Column>
+                                            <header>
+                                                <Label text="Nombre y apellido"/>
+                                            </header>
+                                        </Column>
+                                        <Column width="15rem">
+                                            <header>
+                                                <Label text="Tipo tripulación"/>
+                                            </header>
+                                        </Column>
+                                        <Column width="15rem" hAlign="Center" visible="false">
+                                            <header>
+                                                <Label text="Agregar en pago de viáticos"/>
+                                            </header>
+                                        </Column>
+                                    </columns>
+                                    <items>
+                                        <ColumnListItem>
+                                            <cells>
+                                                <core:Icon src="sap-icon://employee-pane" size="1.5rem"/>
+                                                <ObjectIdentifier title="2001666"/>
+                                                <Text text="Vanessa Budeanu"/>
+                                                <Text text="Técnico"/>
+                                                <Switch customTextOff="No" customTextOn="Si"/>
+                                            </cells>
+                                        </ColumnListItem>
+                                        <ColumnListItem>
+                                            <cells>
+                                                <core:Icon src="sap-icon://employee-pane" size="1.5rem"/>
+                                                <ObjectIdentifier title="2003897"/>
+                                                <Text text="Polydoro"/>
+                                                <Text text="Técnico"/>
+                                                <Switch customTextOff="No" customTextOn="Si"/>
+                                            </cells>
+                                        </ColumnListItem>
+                                        <ColumnListItem>
+                                            <cells>
+                                                <core:Icon src="sap-icon://employee-pane" size="1.5rem"/>
+                                                <ObjectIdentifier title="2002882"/>
+                                                <Text text="Vidigal"/>
+                                                <Text text="Cabina"/>
+                                                <Switch customTextOff="No" customTextOn="Si"/>
+                                            </cells>
+                                        </ColumnListItem>
+                                        <ColumnListItem>
+                                            <cells>
+                                                <core:Icon src="sap-icon://employee-pane" size="1.5rem"/>
+                                                <ObjectIdentifier title="2029832"/>
+                                                <Text text="Fender Junior"/>
+                                                <Text text="Técnico"/>
+                                                <Switch customTextOff="No" customTextOn="Si"/>
+                                            </cells>
+                                        </ColumnListItem>
+                                        <ColumnListItem>
+                                            <cells>
+                                                <core:Icon src="sap-icon://employee-pane" size="1.5rem"/>
+                                                <ObjectIdentifier title="2002637"/>
+                                                <Text text="Storch"/>
+                                                <Text text="Técnico"/>
+                                                <Switch customTextOff="No" customTextOn="Si"/>
+                                            </cells>
+                                        </ColumnListItem>
+                                        <ColumnListItem>
+                                            <cells>
+                                                <core:Icon src="sap-icon://employee-pane" size="1.5rem"/>
+                                                <ObjectIdentifier title="2001661"/>
+                                                <Text text="Lucia Perez"/>
+                                                <Text text="Cabina"/>
+                                                <Switch customTextOff="No" customTextOn="Si"/>
+                                            </cells>
+                                        </ColumnListItem>
+                                    </items>
+                                </Table>
+                            </VBox>
+
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+                </uxap:ObjectPageSection>
+
+
+                <!--  -->
+                <uxap:ObjectPageSection title="Viáticos">
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection title="Fijos" titleUppercase="false">
+                            <uxap:blocks>
+                                <VBox>
+                                    <MessageStrip text="Viáticos calculados automáticamente por sistema. Se permite la carga de nuevos viáticos fijos" type="Information" showIcon="true" class="sapUiTinyMargin">
+                                    </MessageStrip>
+                                    <Table class="sapUiSmallMarginBottom" alternateRowColors="true">
+                                        <columns>
+                                            <Column width="3rem" mergeDuplicates="true">
+                                                <header>
+                                                    <Label/>
+                                                </header>
+                                            </Column>
+                                            <Column width="10rem" mergeDuplicates="true">
+                                                <header>
+                                                    <Label text="Tripulante"/>
+                                                </header>
+                                            </Column>
+                                            <Column width="6rem" hAlign="Center">
+                                                <header>
+                                                    <Label text="Destino"/>
+                                                </header>
+                                            </Column>
+                                            <Column width="6rem" hAlign="Center">
+                                                <header>
+                                                    <Label text="Moneda"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="Center">
+                                                <header>
+                                                    <Label text="Supper"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="Center">
+                                                <header>
+                                                    <Label text="Breakfast"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="Center">
+                                                <header>
+                                                    <Label text="Lunch"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="Center">
+                                                <header>
+                                                    <Label text="Dinner"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="Center">
+                                                <header>
+                                                    <Label text="Transporte"/>
+                                                </header>
+                                            </Column>
+                                            <Column width="7rem" hAlign="End">
+                                                <header>
+                                                    <Label text="Total"/>
+                                                </header>
+                                            </Column>
+                                        </columns>
+                                        <items>
+                                            <ColumnListItem>
+                                                <cells>
+                                                    <core:Icon src="sap-icon://monitor-payments" size="1.5rem"/>
+                                                    <ObjectIdentifier title="2001666" text="Vanessa Budeanu"/>
+                                                    <Text text="MIA"/>
+                                                    <ObjectStatus text="USD" state="Information"/>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="6,20"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="24,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="24,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="24,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="10,00"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <ObjectNumber number="90,30" unit="USD" state="Information"/>
+                                                </cells>
+                                            </ColumnListItem>
+                                            <ColumnListItem>
+                                                <cells>
+                                                    <core:Icon src="sap-icon://monitor-payments" size="1.5rem"/>
+                                                    <ObjectIdentifier title="2001666" text="Vanessa Budeanu"/>
+                                                    <Text text="PVG"/>
+                                                    <ObjectStatus text="EUR" state="Success"/>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="1,20"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="14,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="14,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="14,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="3,00"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <ObjectNumber number="48,30" unit="EUR" state="Success"/>
+                                                </cells>
+                                            </ColumnListItem>
+                                            <ColumnListItem>
+                                                <cells>
+                                                    <core:Icon src="sap-icon://monitor-payments" size="1.5rem"/>
+                                                    <ObjectIdentifier title="2002882" text="Vidigal"/>
+                                                    <Text text="MIA"/>
+                                                    <ObjectStatus text="USD" state="Information"/>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="6,20"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="24,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="24,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="24,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="10,00"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <ObjectNumber number="90,30" unit="USD" state="Information"/>
+                                                </cells>
+                                            </ColumnListItem>
+                                            <ColumnListItem>
+                                                <cells>
+                                                    <core:Icon src="sap-icon://monitor-payments" size="1.5rem"/>
+                                                    <ObjectIdentifier title="2002882" text="Vidigal"/>
+                                                    <Text text="PVG"/>
+                                                    <ObjectStatus text="EUR" state="Success"/>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="1,20"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="14,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="14,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="14,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="3,00"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <ObjectNumber number="48,30" unit="EUR" state="Success"/>
+                                                </cells>
+                                            </ColumnListItem>
+                                            <ColumnListItem>
+                                                <cells>
+                                                    <core:Icon src="sap-icon://monitor-payments" size="1.5rem"/>
+                                                    <ObjectIdentifier title="2003897" text="Polydoro"/>
+                                                    <Text text="MIA"/>
+                                                    <ObjectStatus text="USD" state="Information"/>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="6,20"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="24,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="24,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="24,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="10,00"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <ObjectNumber number="90,30" unit="USD" state="Information"/>
+                                                </cells>
+                                            </ColumnListItem>
+                                            <ColumnListItem>
+                                                <cells>
+                                                    <core:Icon src="sap-icon://monitor-payments" size="1.5rem"/>
+                                                    <ObjectIdentifier title="2003897" text="Polydoro"/>
+                                                    <Text text="PVG"/>
+                                                    <ObjectStatus text="EUR" state="Success"/>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="1,20"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="14,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="14,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="14,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="3,00"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <ObjectNumber number="48,30" unit="EUR" state="Success"/>
+                                                </cells>
+                                            </ColumnListItem>
+                                            <ColumnListItem>
+                                                <cells>
+                                                    <core:Icon src="sap-icon://monitor-payments" size="1.5rem"/>
+                                                    <ObjectIdentifier title="2002637" text="Storch"/>
+                                                    <Text text="MIA"/>
+                                                    <ObjectStatus text="USD" state="Information"/>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="6,20"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="24,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="24,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="24,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="10,00"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <ObjectNumber number="90,30" unit="USD" state="Information"/>
+                                                </cells>
+                                            </ColumnListItem>
+                                            <ColumnListItem>
+                                                <cells>
+                                                    <core:Icon src="sap-icon://monitor-payments" size="1.5rem"/>
+                                                    <ObjectIdentifier title="2002637" text="Storch"/>
+                                                    <Text text="PVG"/>
+                                                    <ObjectStatus text="EUR" state="Success"/>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="1,20"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="14,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="14,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="14,70"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <VBox alignItems="Center">
+                                                        <Text text="3,00"/>
+                                                        <StepInput width="6rem"/>
+                                                    </VBox>
+                                                    <ObjectNumber number="48,30" unit="EUR" state="Success"/>
+                                                </cells>
+                                            </ColumnListItem>
+                                        </items>
+                                    </Table>
+                                </VBox>
+
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                        <uxap:ObjectPageSubSection title="Adicionales" titleUppercase="false">
+                            <uxap:blocks>
+                                <VBox>
+                                    <MessageStrip text="Se permite la carga de nuevos viáticos adicionales para los tripulantes" type="Information" showIcon="true" class="sapUiTinyMargin" />
+                                    <Table class="sapUiSmallMarginBottom" alternateRowColors="true" fixedLayout="false">
+                                        <headerToolbar>
+                                            <OverflowToolbar>
+                                                <ToolbarSpacer/>
+                                                <Button icon="sap-icon://add" text="Nuevo viático adicional"/>
+                                            </OverflowToolbar>
+                                        </headerToolbar>
+                                        <columns>
+                                            <Column width="3rem">
+                                                <header>
+                                                    <Label/>
+                                                </header>
+                                            </Column>
+                                            <Column>
+                                                <header>
+                                                    <Label text="Duty"/>
+                                                </header>
+                                            </Column>
+                                            <Column>
+                                                <header>
+                                                    <Label text="Tripulante"/>
+                                                </header>
+                                            </Column>
+                                            <Column>
+                                                <header>
+                                                    <Label text="Viático"/>
+                                                </header>
+                                            </Column>
+                                            <Column>
+                                                <header>
+                                                    <Label text="Importe"/>
+                                                </header>
+                                            </Column>
+                                            <Column width="6rem">
+                                                <header>
+                                                    <Label text="Moneda"/>
+                                                </header>
+                                            </Column>
+                                            <Column width="25rem">
+                                                <header>
+                                                    <Label text="Comentarios"/>
+                                                </header>
+                                            </Column>
+                                            <Column width="5rem" hAlign="Center">
+                                                <header>
+                                                    <Label text="Acciones"/>
+                                                </header>
+                                            </Column>
+
+                                        </columns>
+                                        <items>
+                                            <ColumnListItem>
+                                                <cells>
+                                                    <core:Icon src="sap-icon://monitor-payments" size="1.5rem"/>
+                                                    <ComboBox placeholder="Seleccione Duty" width="100%">
+                                                        <core:Item key="1" text="1. MIA/GRU"/>
+                                                        <core:Item key="2" text="2. GRU/MIA"/>
+                                                    </ComboBox>
+                                                    <ComboBox placeholder="Seleccione tripulante" width="100%">
+                                                        <core:Item key="1" text="2001666 - Vanessa Budeanu"/>
+                                                        <core:Item key="2" text="2002882 - Vidigal"/>
+                                                        <core:Item key="3" text="2003897 - Polydoro"/>
+                                                        <core:Item key="4" text="2002637 - Storch"/>
+                                                    </ComboBox>
+                                                    <ComboBox placeholder="Seleccione viático" width="100%">
+                                                        <core:Item key="1" text="Lavandería"/>
+                                                        <core:Item key="2" text="Extra menú"/>
+                                                        <core:Item key="3" text="Otros"/>
+                                                    </ComboBox>
+                                                    <Input/>
+                                                    <ComboBox>
+                                                        <core:Item key="1" text="USD"/>
+                                                        <core:Item key="2" text="EUR"/>
+                                                        <core:Item key="3" text="R/ADT"/>
+                                                    </ComboBox>
+                                                    <TextArea placeholder="Ingrese comentarios" cols="999"/>
+                                                    <Button icon="sap-icon://delete" type="Reject"/>
+                                                </cells>
+                                            </ColumnListItem>
+                                            
+                                        </items>
+                                    </Table>
+                                </VBox>
+
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+                </uxap:ObjectPageSection>
+                <!--  -->
+                <uxap:ObjectPageSection title="Pagos">
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection title="Por Duty" titleUppercase="false">
+                            <uxap:blocks>
+                                <VBox>
+                                    <MessageStrip text="Desglose de pagos por Duty" type="Information" showIcon="true" class="sapUiTinyMargin" />
+                                    <Table class="sapUiSmallMarginBottom" alternateRowColors="true" fixedLayout="false">
+                                        <columns>
+                                            <Column width="3rem">
+                                                <header>
+                                                    <Label/>
+                                                </header>
+                                            </Column>
+                                            <Column width="4rem">
+                                                <header>
+                                                    <Label text="Duty"/>
+                                                </header>
+                                            </Column>
+                                            <Column>
+                                                <header>
+                                                    <Label text="Ruta"/>
+                                                </header>
+                                            </Column>
+                                            <Column>
+                                                <header>
+                                                    <Label text="Origen"/>
+                                                </header>
+                                            </Column>
+                                            <Column>
+                                                <header>
+                                                    <Label text="Destino"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="Center">
+                                                <header>
+                                                    <Label text="Fecha pago"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="Center">
+                                                <header>
+                                                    <Label text="Fecha/Hora presentación tripulante" wrapping="true"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="Center">
+                                                <header>
+                                                    <Label text="Fecha/Hora despegue" wrapping="true"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="End">
+                                                <header>
+                                                    <Label text="Supper"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="End">
+                                                <header>
+                                                    <Label text="Breakfast"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="End">
+                                                <header>
+                                                    <Label text="Lunch"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="End">
+                                                <header>
+                                                    <Label text="Dinner"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="End">
+                                                <header>
+                                                    <Label text="Transporte"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="End">
+                                                <header>
+                                                    <Label text="Viáticos adicionales"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="End">
+                                                <header>
+                                                    <Label text="Total"/>
+                                                </header>
+                                            </Column>
+                                        </columns>
+                                        <items>
+                                            <ColumnListItem>
+                                                <cells>
+                                                    <core:Icon src="sap-icon://travel-expense" size="1.5rem"/>
+                                                    <ObjectIdentifier title="1"/>
+                                                    <Text text="GRU-MDZ-SCL"/>
+                                                    <Text text="GRU"/>
+                                                    <Text text="SCL"/>
+                                                    <ObjectIdentifier title="07:10" text="10/02/2022"/>
+                                                    <ObjectIdentifier title="08:10" text="10/02/2022"/>
+                                                    <ObjectIdentifier title="09:10" text="10/02/2022"/>
+                                                    <Text text="0,00"/>
+                                                    <Text text="0,00"/>
+                                                    <Text text="48,30"/>
+                                                    <Text text="48,30"/>
+                                                    <Text text="0,00"/>
+                                                    <Text text="0,00"/>
+                                                    <ObjectNumber number="96,60" unit="USD" state="Success"/>
+                                                </cells>
+                                            </ColumnListItem>
+                                            <ColumnListItem>
+                                                <cells>
+                                                    <core:Icon src="sap-icon://travel-expense" size="1.5rem"/>
+                                                    <ObjectIdentifier title="2"/>
+                                                    <Text text="SCL-PVG"/>
+                                                    <Text text="SCL"/>
+                                                    <Text text="PVG"/>
+                                                    <ObjectIdentifier title="03:15" text="12/02/2022"/>
+                                                    <ObjectIdentifier title="04:15" text="12/02/2022"/>
+                                                    <ObjectIdentifier title="05:15" text="12/02/2022"/>
+                                                    <Text text="22,50"/>
+                                                    <Text text="5,15"/>
+                                                    <Text text="66,15"/>
+                                                    <Text text="66,15"/>
+                                                    <Text text="0,00"/>
+                                                    <Text text="30,30"/>
+                                                    <ObjectNumber number="190,25" unit="EUR" state="Information"/>
+                                                </cells>
+                                            </ColumnListItem>
+                                            <ColumnListItem>
+                                                <cells>
+                                                    <core:Icon src="sap-icon://travel-expense" size="1.5rem"/>
+                                                    <ObjectIdentifier title="3"/>
+                                                    <Text text="PVG-SCL"/>
+                                                    <Text text="PVG"/>
+                                                    <Text text="SCL"/>
+                                                    <ObjectIdentifier title="04:15" text="15/02/2022"/>
+                                                    <ObjectIdentifier title="05:15" text="15/02/2022"/>
+                                                    <ObjectIdentifier title="06:15" text="15/02/2022"/>
+                                                    <Text text="24,15"/>
+                                                    <Text text="12,08"/>
+                                                    <Text text="48,30"/>
+                                                    <Text text="48,40"/>
+                                                    <Text text="0,00"/>
+                                                    <Text text="50,00"/>
+                                                    <ObjectNumber number="182,93" unit="USD" state="Success"/>
+                                                </cells>
+                                            </ColumnListItem>
+                                            <ColumnListItem>
+                                                <cells>
+                                                    <core:Icon src="sap-icon://travel-expense" size="1.5rem"/>
+                                                    <ObjectIdentifier title="4"/>
+                                                    <Text text="SCL-MDZ-GRU"/>
+                                                    <Text text="SCL"/>
+                                                    <Text text="GRU"/>
+                                                    <ObjectIdentifier title="08:45" text="17/02/2022"/>
+                                                    <ObjectIdentifier title="09:45" text="17/02/2022"/>
+                                                    <ObjectIdentifier title="10:45" text="17/02/2022"/>
+                                                    <Text text="0,00"/>
+                                                    <Text text="0,00"/>
+                                                    <Text text="13,00"/>
+                                                    <Text text="0,00"/>
+                                                    <Text text="0,00"/>
+                                                    <Text text="0,00"/>
+                                                    <ObjectNumber number="13,00" unit="R-ADT" state="Warning"/>
+                                                </cells>
+                                            </ColumnListItem>
+                                        </items>
+                                    </Table>
+                                </VBox>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                        <uxap:ObjectPageSubSection title="Fraccionados" titleUppercase="false">
+                            <uxap:blocks>
+                                <VBox>
+                                    <MessageStrip text="Desglose de pagos fraccionados" type="Information" showIcon="true" class="sapUiTinyMargin" />
+                                    <Table class="sapUiSmallMarginBottom" alternateRowColors="true">
+                                        <columns>
+                                            <Column width="3rem" mergeDuplicates="true">
+                                                <header>
+                                                    <Label/>
+                                                </header>
+                                            </Column>
+                                            <Column width="10rem" mergeDuplicates="true">
+                                                <header>
+                                                    <Label text="Tripulante"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="Begin">
+                                                <header>
+                                                    <Label text="Situacion"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="End" width="15rem">
+                                                <header>
+                                                    <Label text="Duty 1 - GRU-MDZ-SCL" wrapping="true"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="End" width="15rem">
+                                                <header>
+                                                    <Label text="Duty 2 - SCL-PVG" wrapping="true"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="End" width="15rem">
+                                                <header>
+                                                    <Label text="Duty 3 - PVG-SCL" wrapping="true"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="End" width="15rem">
+                                                <header>
+                                                    <Label text="Duty 4 - SCL-MDZ-GRU" wrapping="true"/>
+                                                </header>
+                                            </Column>
+                                            <Column width="15rem" hAlign="End">
+                                                <header>
+                                                    <Label text="Total"/>
+                                                </header>
+                                            </Column>
+                                            <Column hAlign="Center" width="6rem">
+                                                <header>
+                                                    <Label text="Acciones"/>
+                                                </header>
+                                            </Column>
+                                        </columns>
+                                        <items>
+                                            <ColumnListItem>
+                                                <cells>
+                                                    <core:Icon src="sap-icon://customer-financial-fact-sheet" size="1.5rem"/>
+                                                    <ObjectIdentifier title="2001666" text="Vanessa Budeanu"/>
+                                                    <tnt:InfoLabel text="En vuelo" colorScheme="7" renderMode="Narrow"/>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="10,30" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="18,30" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="0,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src="sap-icon://travel-expense"/>
+                                                    </VBox>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="50,00" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="0,00" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="0,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src="sap-icon://travel-expense"/>
+                                                    </VBox>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="30,30" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="30,00" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="0,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src="sap-icon://travel-expense"/>
+                                                    </VBox>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="30,30" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="30,00" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="13,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src="sap-icon://travel-expense"/>
+                                                    </VBox>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="90,30" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="48,30" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="13,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src=""/>
+                                                    </VBox>
+                                                    <HBox alignContent="End" alignItems="End">
+                                                        <Button icon="sap-icon://edit" type="Emphasized"/>
+                                                        <Button icon="sap-icon://user-edit" type="Reject" tooltip="Reemplazar tripulante"/>
+                                                    </HBox>
+                                                </cells>
+                                            </ColumnListItem>
+                                            <ColumnListItem>
+                                                <cells>
+                                                    <core:Icon src="sap-icon://customer-financial-fact-sheet" size="1.5rem"/>
+                                                    <ObjectIdentifier title="2002882" text="Vidigal"/>
+                                                    <tnt:InfoLabel text="Reemplazado" colorScheme="3" renderMode="Narrow"/>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="10,30" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="18,30" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="0,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src="sap-icon://travel-expense"/>
+                                                    </VBox>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="50,00" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="0,00" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="0,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src="sap-icon://travel-expense"/>
+                                                    </VBox>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="30,30" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="30,00" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="0,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src="sap-icon://travel-expense"/>
+                                                    </VBox>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="0,00" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="0,00" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="0,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src=""/>
+                                                    </VBox>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="0,00" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="0,00" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="0,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src=""/>
+                                                    </VBox>
+                                                    <HBox alignContent="End" alignItems="End">
+                                                        <Button icon="sap-icon://edit" type="Emphasized" visible="false"/>
+                                                        <Button icon="sap-icon://user-edit" type="Reject" visible="false" tooltip="Reemplazar tripulante"/>
+                                                    </HBox>
+                                                </cells>
+                                            </ColumnListItem>
+                                            <ColumnListItem>
+                                                <cells>
+                                                    <core:Icon src="sap-icon://customer-financial-fact-sheet" size="1.5rem"/>
+                                                    <ObjectIdentifier title="2003897" text="Polydoro"/>
+                                                    <tnt:InfoLabel text="Reemplazo en vuelo" colorScheme="7" renderMode="Narrow"/>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="0,00" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="0,00" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="0,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src=""/>
+                                                    </VBox>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="0,00" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="0,00" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="0,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src=""/>
+                                                    </VBox>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="0,00" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="0,00" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="0,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src=""/>
+                                                    </VBox>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="30,30" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="30,00" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="13,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src="sap-icon://travel-expense"/>
+                                                    </VBox>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="90,30" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="48,30" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="13,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src=""/>
+                                                    </VBox>
+                                                    <HBox alignContent="End" alignItems="End">
+                                                        <Button icon="sap-icon://edit" type="Emphasized"/>
+                                                        <Button icon="sap-icon://user-edit" type="Reject" tooltip="Reemplazar tripulante"/>
+                                                    </HBox>
+                                                </cells>
+                                            </ColumnListItem>
+                                            <ColumnListItem>
+                                                <cells>
+                                                    <core:Icon src="sap-icon://customer-financial-fact-sheet" size="1.5rem"/>
+                                                    <ObjectIdentifier title="2002637" text="Storch"/>
+                                                    <tnt:InfoLabel text="En vuelo" colorScheme="7" renderMode="Narrow"/>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="10,30" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="18,30" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="0,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src="sap-icon://travel-expense"/>
+                                                    </VBox>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="50,00" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="0,00" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="0,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src="sap-icon://travel-expense"/>
+                                                    </VBox>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="30,30" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="30,00" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="0,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src="sap-icon://travel-expense"/>
+                                                    </VBox>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="30,30" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="30,00" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="13,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src="sap-icon://travel-expense"/>
+                                                    </VBox>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="90,30" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="48,30" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="13,00" unit="R/ADT" state="Warning"/>
+                                                        <core:Icon src=""/>
+                                                    </VBox>
+                                                    <HBox alignContent="End" alignItems="End">
+                                                        <Button icon="sap-icon://edit" type="Emphasized"/>
+                                                        <Button icon="sap-icon://user-edit" type="Reject" tooltip="Reemplazar tripulante"/>
+                                                    </HBox>
+                                                </cells>
+                                            </ColumnListItem>
+                                        </items>
+                                    </Table>
+                                </VBox>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                        <uxap:ObjectPageSubSection title="Totalizados" titleUppercase="false">
+                            <uxap:blocks>
+                                <VBox>
+                                    <MessageStrip text="Desglose de pagos totalizados por tripulante" type="Information" showIcon="true" class="sapUiTinyMargin" />
+                                    <Table class="sapUiSmallMarginBottom" alternateRowColors="true">
+                                        <columns>
+                                            <Column width="3rem" mergeDuplicates="true">
+                                                <header>
+                                                    <Label/>
+                                                </header>
+                                            </Column>
+                                            <Column width="10rem" mergeDuplicates="true">
+                                                <header>
+                                                    <Label text="Tripulante"/>
+                                                </header>
+                                            </Column>
+                                            <Column>
+                                                <header>
+                                                    <Label text="Función"/>
+                                                </header>
+                                            </Column>
+                                            <Column>
+                                                <header>
+                                                    <Label text="Estado Pago"/>
+                                                </header>
+                                            </Column>
+                                            <Column width="10rem" hAlign="End">
+                                                <header>
+                                                    <Label text="Total"/>
+                                                </header>
+                                            </Column>
+                                        </columns>
+                                        <items>
+                                            <ColumnListItem highlight="Success">
+                                                <cells>
+                                                    <core:Icon src="sap-icon://loan" size="1.5rem"/>
+                                                    <ObjectIdentifier title="2001666" text="Vanessa Budeanu"/>
+                                                    <Text text="Técnico"/>
+                                                    <ObjectIdentifier text="Pagado Totalmente"/>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="90,30" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="48,30" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="13,00" unit="R/ADT" state="Warning"/>
+                                                    </VBox>
+                                                </cells>
+                                            </ColumnListItem>
+                                            <ColumnListItem highlight="Warning">
+                                                <cells>
+                                                    <core:Icon src="sap-icon://loan" size="1.5rem"/>
+                                                    <ObjectIdentifier title="2002882" text="Vidigal"/>
+                                                    <Text text="Comercial"/>
+                                                    <ObjectIdentifier text="Pagado Parcialmente"/>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="90,30" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="48,30" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="13,00" unit="R/ADT" state="Warning"/>
+                                                    </VBox>
+                                                </cells>
+                                            </ColumnListItem>
+                                            <ColumnListItem highlight="Error">
+                                                <cells>
+                                                    <core:Icon src="sap-icon://loan" size="1.5rem"/>
+                                                    <ObjectIdentifier title="2003897" text="Polydoro"/>
+                                                    <Text text="Comercial"/>
+                                                    <ObjectIdentifier text="Pendiente"/>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="90,30" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="48,30" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="13,00" unit="R/ADT" state="Warning"/>
+                                                    </VBox>
+                                                </cells>
+                                            </ColumnListItem>
+                                            <ColumnListItem highlight="Success">
+                                                <cells>
+                                                    <core:Icon src="sap-icon://loan" size="1.5rem"/>
+                                                    <ObjectIdentifier title="2002637" text="Storch"/>
+                                                    <Text text="Técnico"/>
+                                                    <ObjectIdentifier text="Pagado Totalmente"/>
+                                                    <VBox alignItems="End">
+                                                        <ObjectNumber number="90,30" unit="USD" state="Information"/>
+                                                        <ObjectNumber number="48,30" unit="EUR" state="Success"/>
+                                                        <ObjectNumber number="13,00" unit="R/ADT" state="Warning"/>
+                                                    </VBox>
+                                                </cells>
+                                            </ColumnListItem>
+                                        </items>
+                                    </Table>
+                                </VBox>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+                </uxap:ObjectPageSection>
+            </uxap:sections>
+
+
+
+
+
+
+
+
+            <!-- <uxap:sections>
+            <uxap:ObjectPageSection title="Datos de Cabecera">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <f:SimpleForm layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2" singleContainerFullSize="false">
+                                <f:content>
+                                    <core:Title icon="sap-icon://action-settings" text="Referencia"/>
+                                    <Label text="Clase de Documento" required="true"/>
+                                    <Select id="frgClaseAviso" forceSelection="false" change="onChangeClaseOrden" items="{ path:'/ClaseOrdenSet'}" selectedKey="{Auart}" enabled="true">
+                                        <core:ListItem key="{OrderType}" text="{OrderType} - {Descripcion}"/>
+                                    </Select>
+                                    <Label text="Grupo Planificador" required="true"/>
+                                    <Select id="frgGrupoPlanificacion" forceSelection="false" items="{ path:'MatchGPlanif>/'}" selectedKey="{Ingpr}" enabled="true">
+                                        <core:ListItem key="{MatchGPlanif>Ingrp}" text="{MatchGPlanif>Ingrp} - {MatchGPlanif>Innam}"/>
+                                    </Select>
+                                    <Label text="Puesto de Trabajo" required="true"/>
+                                    <Input id="frgPuestoTrabajoResp" value="{Gewrk}" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="onValueHelpPtoTrabajo"/>
+                                    <Label text="Ubicacion Tecnica"/>
+                                    <Input id="frgTplnr" value="{Tplnr}" enabled="true" showValueHelp="true" valueHelpOnly="false" valueHelpRequest="onValueHelpUbicacionTecnica"/>
+                                    <Label text="Equipo"/>
+                                    <Input id="frgEqunr" value="{Equnr}" enabled="true" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="onValueHelpEquipo" suggestionItems="{MatchEquipos>/Equipos}">
+                                        <suggestionItems>
+                                            <core:ListItem text="{MatchEquipos>Equnr}" additionalText="{MatchEquipos>Equnr}"/>
+                                        </suggestionItems>
+                                    </Input>
+                                    <Label text="Division" required="true"/>
+                                    <Select id="frgDivision" forceSelection="false" selectedKey="{Gsber}" items="{ path:'/DivisionSet'}">
+                                        <core:ListItem key="{Gsber}" text="{Gsber} - {Gtext}"/>
+                                    </Select>
+                                    <core:Title icon="sap-icon://date-time" text="Datos técnicos"/>
+                                    <Label text="Descripción" required="true"/>
+                                    <Input id="frgDescripcion" value="{Qmtxt}" maxLength="40"/>
+                                    <Label text="Inicio extremo" required="true"/>
+                                    <DatePicker id="DTP3"/>
+                                    <Label text="Fin extremo"/>
+                                    <DatePicker id="DTP2"/>
+                                    <Label text="Prioridad" required="true"/>
+                                    <Select id="frgPrioridad" forceSelection="false" selectedKey="{Priok}" items="{ path:'MatchPrioridad>/'}">
+                                        <core:ListItem key="{MatchPrioridad>Priok}" text="{MatchPrioridad>Descripcion}"/>
+                                    </Select>
+                                    <Label text="Clase de Actividad PM" required="true"/>
+                                    <Select id="frgClaseActividad" forceSelection="false" enabled="true" items="{ path:'MatchActividades>/'}" selectedKey="{Ilart}">
+                                        <core:ListItem key="{MatchActividades>Ilart}" text="{MatchActividades>Ilart} - {MatchActividades>Ilatx}"/>
+                                    </Select>
+                                    <Label text="Estado Inst." required="true"/>
+                                    <Select id="frgEstInstalacion" forceSelection="false" selectedKey="{Anlzu}" items="{ path:'/EstadoInstalacionSet'}">
+                                        <core:ListItem key="{Anlzu}" text="{Anlzu} - {Anlzux}"/>
+                                    </Select>
+                                </f:content>
+                            </f:SimpleForm>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection title="Operaciones">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <Table id="idTablaOperaciones" growing="true" mode="Delete" delete="onDelete" growingThreshold="10" items="{ path : 'locales>/To_Operaciones'}" width="auto">
+                                <headerToolbar>
+                                    <OverflowToolbar id="otbSubheader">
+                                        <Title text="Lista de Operaciones" level="H2"/>
+                                        <ToolbarSpacer/>
+                                        <Button id="editButton" icon="sap-icon://add" visible="{path: 'Cerrada', formatter: '.formatter.ordenCerrada'}" type="Transparent" press="onAddLine"/>
+                                    </OverflowToolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column width="2rem" demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text=" "/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Oper."/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Psto.Tbjo"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Centro"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Clave control"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Clave modelo"/>
+                                    </Column>
+                                    <Column width="15em" demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Descripcion"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Trabajo"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline" visible="false">
+                                        <Text text=" "/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline" visible="false">
+                                        <Text text=" "/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Recursos"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Duración"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline" visible="false">
+                                        <Text text=" "/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline" visible="false">
+                                        <Text text=" "/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline" visible="false">
+                                        <Text text=" "/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Tratamiento"/>
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem highlight="{path: 'locales>Accion', formatter: '.formatter.colorOperacion'}" press="editOper" type="Navigation">
+                                        <cells>
+                                            <core:Icon src="sap-icon://add-activity-2"/>
+                                            <ObjectIdentifier text="{locales>Activity}"/>
+                                            <ObjectStatus text="{locales>WorkCntr}"/>
+                                            <ObjectStatus text="{locales>Plant}"/>
+                                            <ObjectStatus text="{locales>ControlKey}"/>
+                                            <ObjectStatus text="{locales>TextKey}"/>
+                                            <ObjectStatus text="{locales>Description}"/>
+                                            <ObjectStatus text="{locales>WorkActivity} - {locales>UnWork}"/>
+                                            <ObjectStatus text="{locales>WorkActivity}" visible="false"/>
+                                            <ObjectStatus text="{locales>UnWork}" visible="false"/>
+                                            <ObjectStatus text="{locales>NumberOfCapacities}"/>
+                                            <ObjectStatus text="{locales>DurationNormal} - {locales>DurationNormalUnit}"/>
+                                            <ObjectStatus text="{locales>DurationNormal}" visible="false"/>
+                                            <ObjectStatus text="{locales>DurationNormalUnit}" visible="false"/>
+                                            <ObjectStatus text="{locales>Accion}" visible="false"/>
+                                            <ObjectStatus text="{locales>Status}" visible="true" state="{path: 'locales>Accion', formatter: '.formatter.colorOperacion'}"/>
+                                            <ObjectStatus text="{locales>Matkl}" visible="false"/>
+                                            <ObjectStatus text="{locales>Ekgrp}" visible="false"/>
+                                            <ObjectStatus text="{locales>Ekorg}" visible="false"/>
+                                            <ObjectStatus text="{locales>IdContrato}" visible="false"/>
+                                            <ObjectStatus text="{locales>Lifnr}" visible="false"/>
+                                            <ObjectStatus text="{locales>Afnam}" visible="false"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection title="Componentes">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <Table id="idTablaMateriales" growing="true" mode="Delete" delete="onDeleteComponentes" growingThreshold="10" items="{locales>/To_Componentes}">
+                                <headerToolbar>
+                                    <OverflowToolbar id="otbSubheaderRep">
+                                        <Title text="Componentes de la Orden" level="H2"/>
+                                        <ToolbarSpacer/>
+                                        <Button id="buttonComponentes" visible="{path: 'Cerrada', formatter: '.formatter.ordenCerrada'}" icon="sap-icon://add" type="Transparent" press="onAddLineMateriales"/>
+                                    </OverflowToolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" width="2rem" popinDisplay="Inline">
+                                        <Text text=" "/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Pos"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Comp."/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline" width="10rem">
+                                        <Text text="Descripcion"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Cantidad"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="UM"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline" width="3rem">
+                                        <Text text="Tipo"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline" visible="false">
+                                        <Text text="Centro"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Almacén"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Operacion"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline" visible="false">
+                                        <Text text="Reserva"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline" visible="false">
+                                        <Text text="Pos.Reserva"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline" visible="false">
+                                        <Text text="Cant.Nec."/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline" visible="false">
+                                        <Text text="Cant.Tomada"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline" visible="false">
+                                        <Text text=" "/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Tratamiento"/>
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem highlight="{path: 'locales>Accion', formatter: '.formatter.colorOperacion'}" type="Navigation" press="editOperComponentes">
+                                        <cells>
+                                            <core:Icon src="sap-icon://add-product"/>
+                                            <ObjectIdentifier text="{locales>Activity}"/>
+                                            <ObjectIdentifier text="{locales>Matnr}"/>
+                                            <ObjectIdentifier text="{locales>Descripcion}"/>
+                                            <ObjectStatus text="{locales>CantidadNecesaria}"/>
+                                            <ObjectStatus text="{locales>UnidadDeMedida}"/>
+                                            <ObjectStatus text="{locales>TipoDePosicion}"/>
+                                            <ObjectStatus text="{locales>Centro}"/>
+                                            <ObjectStatus text="{locales>Almacen}"/>
+                                            <ObjectStatus text="{locales>Operacion}"/>
+                                            <Text text="{locales>NumeroDeReserva}" wrapping="false" visible="false"/>
+                                            <Text text="{locales>NumPosReserva}" wrapping="false" visible="false"/>
+                                            <Text text="{locales>CantNecesariaReserv}" wrapping="false" visible="false"/>
+                                            <Text text="{locales>CantidadTomada}" wrapping="false" visible="false"/>
+                                            <Text text="{locales>Accion}" visible="false"/>
+                                            <ObjectStatus text="{locales>Status}" visible="true" state="{path: 'locales>Accion', formatter: '.formatter.colorOperacion'}"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection title="Servicios">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <Table id="idTablaServicios" growing="true" mode="Delete" delete="onDeleteServicios" growingThreshold="10" items="{ path : 'locales>/To_Servicios'}" width="auto">
+                                <headerToolbar>
+                                    <OverflowToolbar id="otbSubheaderServicios">
+                                        <Title text="Lista de Servicios" level="H2"/>
+                                        <ToolbarSpacer/>
+                                        <Button id="editButtonServicios" icon="sap-icon://add" type="Transparent" press="onAddLineServicios"/>
+                                    </OverflowToolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column width="2rem" demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text=" "/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Pos"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Servicio"/>
+                                    </Column>
+                                    <Column width="10rem" demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Descripcion"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Cantidad"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="UM"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Precio Bruto"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Moneda"/>
+                                    </Column>
+                                    <Column visible="false" demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Clase Coste"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Operacion"/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline" visible="false">
+                                        <Text text=" "/>
+                                    </Column>
+                                    <Column demandPopin="{= !${device>/system/desktop} }" minScreenWidth="Tablet" popinDisplay="Inline">
+                                        <Text text="Tratamiento"/>
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem highlight="{path: 'locales>Accion', formatter: '.formatter.colorOperacion'}" press="editServicios" type="Navigation">
+                                        <cells>
+                                            <core:Icon src="sap-icon://action-settings"/>
+                                            <ObjectIdentifier text="{locales>Activity}"/>
+                                            <ObjectIdentifier text="{locales>Serv}"/>
+                                            <ObjectStatus text="{locales>Descripcion}"/>
+                                            <ObjectStatus text="{locales>Cantidad}"/>
+                                            <ObjectStatus text="{locales>UM}"/>
+                                            <ObjectStatus text="{locales>Precio}"/>
+                                            <ObjectStatus text="{locales>Moneda}"/>
+                                            <ObjectStatus text="{locales>ClaseCoste}" visible="false"/>
+                                            <ObjectStatus text="{locales>Operacion}"/>
+                                            <ObjectStatus text="{locales>Accion}"/>
+                                            <ObjectStatus text="{locales>Status}" visible="true" state="{path: 'locales>Accion', formatter: '.formatter.colorOperacion'}"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection title="Adjuntos">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Listado de Anexos">
+                        <uxap:blocks>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Visor de Anexos">
+                        <uxap:blocks>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection title="Impresiones">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Formulario Orden">
+                        <uxap:blocks>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Formulario Reserva">
+                        <uxap:blocks>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections> -->
+        </uxap:ObjectPageLayout>
+    </Page>
+</mvc:View>

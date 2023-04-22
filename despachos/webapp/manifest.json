@@ -17,7 +17,8 @@
     }
   },
   "sap.ui": {
-    "technology": "UI5",
+    "technology": "UI5",    
+    "fullWidth": true,
     "icons": {
       "icon": "",
       "favIcon": "",
@@ -82,10 +83,10 @@
       },
       "routes": [
         {
-          "name": "RouteApp",
-          "pattern": ":?query:",
+          "name": "Despachos",
+          "pattern": "",
           "target": [
-            "TargetApp"
+            "Despachos"
           ]
         }
       ],
@@ -96,6 +97,11 @@
           "clearControlAggregation": false,
           "viewId": "App",
           "viewName": "App"
+        },
+        "Despachos": {
+          "viewType": "XML",
+          "viewName": "Despachos",
+          "viewId": "Despachos"
         }
       }
     },
