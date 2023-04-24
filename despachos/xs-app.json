@@ -3,6 +3,18 @@
   "authenticationMethod": "route",
   "routes": [
     {
+      "authenticationType": "xsuaa",
+      "csrfProtection": false,
+      "source": "^/despachos/",
+      "destination": "CAPDespachos"
+    },
+    {
+      "authenticationType": "xsuaa",
+      "csrfProtection": false,
+      "source": "^/",
+      "destination": "CAPDespachos"
+    },
+    {
       "source": "^undefined/(.*)$",
       "target": "undefined/$1",
       "destination": "abap-cloud-abap_hdb-c3aea678trial-dev",

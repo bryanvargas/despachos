@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0"
+    xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="despachosService"
+            xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="EntregaSet" EntityType="despachosService.EntregaSet"/>
+            </EntityContainer>
+            <EntityType Name="EntregaSet">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="Vbeln" Type="Edm.String" Nullable="false"/>
+                <Property Name="NameWe" Type="Edm.String" Nullable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false"/>
+                <Property Name="Arktx" Type="Edm.String" Nullable="false"/>
+                <Property Name="Lfimg" Type="Edm.String" Nullable="false"/>
+                <Property Name="Vrkme" Type="Edm.String" DefaultValue="BOL"/>
+                <Property Name="Wadat" Type="Edm.Date" Nullable="false"/>
+                <Property Name="Werks" Type="Edm.String" Nullable="false"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
